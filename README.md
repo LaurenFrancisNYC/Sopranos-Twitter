@@ -85,7 +85,7 @@ https://whimsical.com/twitter-but-everyone-posts-as-a-sopranos-character-KdXZWLf
 | Frontend  (general JS/HTML)  |    H     |     4 hrs      |    TBD     |     TBD     |
 | Frontend  (CSS)  |    H     |     4 hrs      |    TBD     |     TBD     |
 | Testing / QA  |    H     |     4 hrs      |    TBD     |     TBD     |
-| TOTAL               |          |     6 hrs      |     TBD     |     TBD     |
+| TOTAL               |          |     32 hrs      |     TBD     |     TBD     |
 
 
 <br>
