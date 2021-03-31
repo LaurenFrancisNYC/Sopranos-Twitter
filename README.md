@@ -32,7 +32,7 @@ _**A Twitter Clone Where Everyone Can Only Post as Sopranos Characters (Working 
 - The ability for users to sign up, set a password, and select the character (of 10 choices) they want to post as. 
 - The ability to post to feed, with most recent posts at the top. 
 - A like button, which rewards the post with some gabagool.
-- A dislike button for posts that a user believes to not be in character.
+- A dislike button for posts that a user believes to not be in character. The gabagool count will be tied to this, so posts will have a score based on how many likes and dislikes.
 - If the dislike button is pressed by 10 users on a post, the post will be delated. 
 - The ability to comment on posts. Comments will also be able to be liked and disliked.
 
@@ -59,29 +59,8 @@ _**A Twitter Clone Where Everyone Can Only Post as Sopranos Characters (Working 
 
 > Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-![Dummy Link](url)
+https://whimsical.com/twitter-but-everyone-posts-as-a-sopranos-character-KdXZWLfY9tDHbSC3vxNzSn
 
-- Desktop Landing
-
-![Dummy Link](url)
-
-- Desktop Hero
-
-![Dummy Link](url)
-
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
 
 #### Component Tree
 
@@ -91,21 +70,8 @@ _**A Twitter Clone Where Everyone Can Only Post as Sopranos Characters (Working 
 
 #### Component Architecture
 
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
+https://whimsical.com/twitter-but-everyone-posts-as-a-sopranos-character-KdXZWLfY9tDHbSC3vxNzSn
 
-``` structure
-
-src
-|__ assets/
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
-|__ components/
-      |__ Header.jsx
-|__ services/
-
-```
 
 #### Time Estimates
 
