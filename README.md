@@ -94,9 +94,8 @@ https://whimsical.com/twitter-but-everyone-posts-as-a-sopranos-character-KdXZWLf
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
+https://whimsical.com/twitter-but-everyone-posts-as-a-sopranos-character-KdXZWLfY9tDHbSC3vxNzSn
 
-[ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
 <br>
 
 ***
