@@ -5,7 +5,3 @@ export const getAllCharacters = async () => {
   return resp.data;
 }
 
-export const addCharacter = async (postId, characterId) => {
-  const resp = await api.post(`/posts/${postId}/characters/${characterId}`);
-  return resp.data;
-}
