@@ -10,8 +10,8 @@ export const getOnePost = async (id) => {
   return resp.data;
 }
 
-export const postPost = async (postData) => {
-  const resp = await api.post('/posts', { post: postData });
+export const postPost = async (postData, charID) => {
+  const resp = await api.post(`/characters/${charID}/posts/`, { post: postData });
   return resp.data;
 }
 
@@ -22,5 +22,15 @@ export const putPost = async (id, postData) => {
 
 export const destroyPost = async (id) => {
   const resp = await api.delete(`/posts/${id}`);
+  return resp;
+}
+
+export const upvotePost = async (id) => {
+  const resp = await api.put(`/${id}/upvote`);
+  return resp;
+}
+
+export const downvotePost = async (id) => {
+  const resp = await api.put(`/${id}/downvote`);
   return resp;
 }
