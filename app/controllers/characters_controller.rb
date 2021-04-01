@@ -8,8 +8,15 @@ class CharactersController < ApplicationController
   end
 
   # GET /characters/1
-  def show
-    @character = Character.find(params[:id])
-    render json: @character
+  # def show
+  #   @character = Character.find(params[:id])
+  #   render json: @character
+  # end
+  def add_character
+    @post = Post.find(params[:post_id])
+    @characters = Character.find(params[:id])
+    @post.characters.push(@character)
+
+    render json: @post, include: :characters
   end
 end

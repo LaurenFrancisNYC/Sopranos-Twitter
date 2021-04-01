@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
-    @food.user = @current_user
+    @post.user = @current_user
     if @post.save
       render json: @post, status: :created, location: @post
     else
