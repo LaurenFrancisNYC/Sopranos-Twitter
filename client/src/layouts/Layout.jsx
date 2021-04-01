@@ -5,6 +5,8 @@ export default function Layout(props) {
   const { currentUser, handleLogout } = props;
   return (
     <div>
+      <Link to='/'>Home</Link>
+      <Link to='/posts/new'>New Post</Link>
       <header>
         {
           currentUser ?
@@ -13,7 +15,7 @@ export default function Layout(props) {
               <button onClick={handleLogout}>Logout</button>
             </>
             :
-            <Link to='/login'>Login/Register</Link>
+            <Link to='/login'>Login / Register</Link>
         }
       </header>
       {props.children}

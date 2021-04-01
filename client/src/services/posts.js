@@ -5,6 +5,11 @@ export const getAllPosts = async () => {
   return resp.data;
 }
 
+export const getAllPostsFromCharacter = async (charID) => {
+  const resp = await api.get(`/characters/${charID}/posts/`);
+  return resp.data;
+}
+
 export const getOnePost = async (id) => {
   const resp = await api.get(`/posts/${id}`);
   return resp.data;

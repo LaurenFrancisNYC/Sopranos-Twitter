@@ -18,3 +18,5 @@ puts "#{User.count} users created"
 puts "#{Character.count} character created"
 
 
+
+

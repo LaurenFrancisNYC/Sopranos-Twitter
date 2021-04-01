@@ -7,6 +7,8 @@ import Layout from './layouts/Layout';
 import Login from './screens/Login';
 import Register from './screens/Register';
 
+import MainContainer from './containers/MainContainer';
+
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 
 function App() {
@@ -57,9 +59,9 @@ function App() {
             />
           </Route>
           <Route path='/'>
-            {/* <MainContainer
+            <MainContainer
               currentUser={currentUser}
-            /> */}
+            />
           </Route>
         </Switch>
       </Layout>
