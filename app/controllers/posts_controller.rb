@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
-    render json: @posts, include: :character
+    render json: @posts, include: :character 
   end
 
   # GET /posts/1

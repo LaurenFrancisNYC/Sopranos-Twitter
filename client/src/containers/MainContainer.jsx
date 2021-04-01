@@ -6,6 +6,8 @@ import { getAllCharacters } from "../services/characters";
 
 import Posts from "../screens/Posts";
 import PostCreate from "../screens/PostCreate";
+import PostEdit from "../screens/PostEdit";
+
 
 export default function MainContainer(props) {
   const [posts, setPosts] = useState([]);
@@ -58,7 +60,7 @@ export default function MainContainer(props) {
         <PostCreate handleCreate={handleCreate} characters={characters}/>
       </Route>
       <Route path="/posts/edit/:id">
-        <PostCreate posts={posts} handleUpdate={handleUpdate}/>
+        <PostEdit posts={posts} handleUpdate={handleUpdate} characters={characters}/>
       </Route>
     </Switch>
   );
