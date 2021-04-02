@@ -32,10 +32,10 @@ export const destroyPost = async (id) => {
 
 export const upvotePost = async (id) => {
   const resp = await api.put(`/${id}/upvote`);
-  return resp;
+  return resp.data;
 }
 
 export const downvotePost = async (id) => {
   const resp = await api.put(`/${id}/downvote`);
-  return resp;
+  return resp.data;
 }

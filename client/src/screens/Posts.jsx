@@ -8,7 +8,8 @@ export default function Posts(props) {
     currentUser,
     handleUpvote,
     handleDownvote,
-    setSortType
+    setSortType,
+    voted
   } = props;
 
   return (
@@ -39,8 +40,8 @@ export default function Posts(props) {
 
           {currentUser !== null && (
             <>
-              <button onClick={() => handleUpvote(post.id)}>upvote</button>
-              <button onClick={() => handleDownvote(post.id, post.score)}>downvote</button>
+              <button disabled={voted.includes(post.id)} onClick={() => handleUpvote(post.id)}>upvote</button>
+              <button disabled={voted.includes(post.id)} onClick={() => handleDownvote(post.id, post.score)}>downvote</button>
             </>
           )}
         </>

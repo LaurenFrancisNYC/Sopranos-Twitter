@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     if params[:character_id]
       @posts = Post.where(character_id: params[:character_id])
     else
-      @posts = Post.all
+      @posts = Post.order(created_at: :desc)
     end
     render json: @posts, include: [:character, :user] 
   end
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
   def upvote_score
     @post.score +=1 
     if @post.save
-      render json: @post
+      render json: @post, include: [:character, :user]  
     else
       render json: @post.errors, status: :unprocessable_entity
     end
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   def downvote_score
     @post.score -=1 
     if @post.save
-      render json: @post
+      render json: @post, include: [:character, :user]  
     else
       render json: @post.errors, status: :unprocessable_entity
     end

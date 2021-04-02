@@ -18,8 +18,8 @@ import PostEdit from "../screens/PostEdit";
 export default function MainContainer(props) {
   const [posts, setPosts] = useState([]);
   const [characters, setCharacters] = useState([]);
-  const [toggle, setToggle] = useState(true);
   const [sortType, setSortType] = useState('date');
+  const [voted, setVoted] = useState([]);
 
   const history = useHistory();
   const { currentUser } = props;
@@ -30,7 +30,7 @@ export default function MainContainer(props) {
       setPosts(posts);
     };
     fetchPosts();
-  }, [toggle]);
+  }, []);
 
 //sorting
 useEffect(() => {
@@ -57,7 +57,7 @@ useEffect(() => {
 
   const handleCreate = async (postData, charID) => {
     const newPost = await postPost(postData, charID);
-    setPosts((prevState) => [...prevState, newPost]);
+    setPosts((prevState) => [newPost, ...prevState]);
     history.push("/");
   };
 
@@ -78,16 +78,33 @@ useEffect(() => {
 
 //upvotes and downvotes
   const handleUpvote = async (id) => {
-    await upvotePost(id);
-    setToggle(!toggle);
+    const updatedPost = await upvotePost(id);
+    setPosts((prevState) =>
+      prevState.map((post) => {
+        return post.id === Number(id) ? updatedPost : post;
+      })
+    );
+    setVoted(prevState=>[...prevState, id])
   };
 
   const handleDownvote = async (id, score) => {
-    await downvotePost(id);
     if (score < -10) {
-      handleDelete(id)
+      await handleDelete(id)
+      setPosts((prevState) =>
+      prevState.filter((post) => {
+        return post.id !== Number(id)
+      })
+    ); 
     }
-    setToggle(!toggle);
+    else {
+      const updatedPost = await downvotePost(id);
+      setPosts((prevState) =>
+        prevState.map((post) => {
+          return post.id === Number(id) ? updatedPost : post;
+        })
+      );
+      setVoted(prevState=>[...prevState, id])
+    }
   };
 
   return (
@@ -100,6 +117,7 @@ useEffect(() => {
           handleUpvote={handleUpvote}
           handleDownvote={handleDownvote}
           setSortType={setSortType}
+          voted={voted}
         />
       </Route>
       <Route path="/posts/new">
