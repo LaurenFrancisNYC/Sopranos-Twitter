@@ -10,13 +10,13 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
-    render json: @posts, include: :character 
+    render json: @posts, include: [:character, :user] 
   end
 
   # GET /posts/1
   def show
     @post = Post.find(params[:id])
-    render json: @post
+    render json: @post, include: [:character, :user] 
   end
 
   # POST /posts
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     @post.score = 0
 
     if @post.save
-      render json: @post, status: :created, location: @post
+      render json: @post, status: :created, location: @post, include: [:character, :user] 
     else
       render json: @post.errors, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
-      render json: @post
+      render json: @post, include: [:character, :user]  
     else
       render json: @post.errors, status: :unprocessable_entity
     end
