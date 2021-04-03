@@ -1,4 +1,6 @@
 import PostCards from "../components/PostCards";
+import "./Posts.css";
+
 
 export default function Posts(props) {
   const {
@@ -20,7 +22,7 @@ export default function Posts(props) {
           <option value="score">Score - highest</option>
         </select>
       </>
-      <>
+      <div className="posts-feed">
         <PostCards
           posts={posts}
           handleDelete={handleDelete}
@@ -29,7 +31,7 @@ export default function Posts(props) {
           handleDownvote={handleDownvote}
           voted={voted}
         />
-      </>
+      </div>
     </div>
   );
 }

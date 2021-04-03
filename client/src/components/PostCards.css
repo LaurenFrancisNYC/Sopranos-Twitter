@@ -1,0 +1,93 @@
+.post {
+  border-color: rgba(255, 255, 255, 0.386);
+  border-style: solid;
+  border-width: 2px;
+  background-color: rgba(172, 172, 172, 0.386);
+  /* border-radius: 10px;  */
+  min-width: 500px;
+  max-width: 700px;
+  /* margin: 10px; */
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  flex-direction: row;
+}
+
+.post-text {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 271px;
+}
+
+.character-image {
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  min-height: 100px;
+  object-fit: cover;
+  /* border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; */
+}
+
+.post-content {
+  font-size: 20px;
+}
+
+.post-credits {
+  margin-top: 0px;
+  /* position: absolute; */
+  font-style: italic;
+}
+
+.post-score {
+  font-size: 20px;
+  min-width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-controls{
+  /* position: absolute; */
+  /* margin-right: 30px;  */
+}
+
+.post-edit-button {
+  /* position: absolute; */
+  margin-left: -29px;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+  background-color: rgba(0, 0, 0, 0.0);
+
+}
+
+.post-delete-button {
+  /* position: absolute; */
+  /* margin-bottom: 20px; */
+  background-color: rgba(0, 0, 0, 0.0);
+  /* margin-left: 466px; */
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+.post-upvote-button {
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.0);
+  margin: 5px;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+.post-downvote-button {
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.0);
+  margin: 5px;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}

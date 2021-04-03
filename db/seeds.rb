@@ -26,7 +26,7 @@ puts "#{User.count} users created"
 @melfie = Character.create!(name: 'Dr. Jennifer Melfi', img_url: 'https://i.ibb.co/DbhdPkB/Jennifer-Melfi.webp')
 
 
-puts "#{Character.count} character created"
+puts "#{Character.count} characters created"
 
 
 
