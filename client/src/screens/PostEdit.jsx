@@ -36,8 +36,7 @@ export default function PostEdit(props) {
     }}>
       <label>
         Edit Post:
-        <input
-          type='textarea'
+        <textarea
           name='content'
           value={content}
           onChange={handleChange}
