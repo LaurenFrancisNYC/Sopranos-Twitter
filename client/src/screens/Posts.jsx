@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Posts(props) {
@@ -9,7 +8,7 @@ export default function Posts(props) {
     handleUpvote,
     handleDownvote,
     setSortType,
-    voted
+    voted,
   } = props;
 
   return (
@@ -22,7 +21,7 @@ export default function Posts(props) {
       </select>
 
       {posts.map((post) => (
-        <>
+        <div className="posts" key={post.id}>
           <div>{post.content}</div>
           <div>
             {post.character.name} aka {post.user.name}
@@ -40,11 +39,21 @@ export default function Posts(props) {
 
           {currentUser !== null && (
             <>
-              <button disabled={voted.includes(post.id)} onClick={() => handleUpvote(post.id)}>upvote</button>
-              <button disabled={voted.includes(post.id)} onClick={() => handleDownvote(post.id, post.score)}>downvote</button>
+              <button
+                disabled={voted.includes(post.id)}
+                onClick={() => handleUpvote(post.id)}
+              >
+                upvote
+              </button>
+              <button
+                disabled={voted.includes(post.id)}
+                onClick={() => handleDownvote(post.id, post.score)}
+              >
+                downvote
+              </button>
             </>
           )}
-        </>
+        </div>
       ))}
     </div>
   );

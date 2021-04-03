@@ -18,7 +18,7 @@ import PostEdit from "../screens/PostEdit";
 export default function MainContainer(props) {
   const [posts, setPosts] = useState([]);
   const [characters, setCharacters] = useState([]);
-  const [sortType, setSortType] = useState('date');
+  const [sortType, setSortType] = useState("date");
   const [voted, setVoted] = useState([]);
 
   const history = useHistory();
@@ -32,20 +32,21 @@ export default function MainContainer(props) {
     fetchPosts();
   }, []);
 
-//sorting
-useEffect(() => {
-  const sortArray = type => {
-    const types = {
-      date: "id",
-    score: "score",
+  //sorting
+  useEffect(() => {
+    const sortArray = (type) => {
+      const types = {
+        date: "id",
+        score: "score",
+      };
+      const sortProperty = types[type];
+      const sorted = [...posts].sort(
+        (a, b) => b[sortProperty] - a[sortProperty]
+      );
+      setPosts(sorted);
     };
-    const sortProperty = types[type];
-    const sorted = [...posts].sort((a, b) => b[sortProperty] - a[sortProperty]);
-    setPosts(sorted);
-  };
-  sortArray(sortType);
-}, [sortType]);
-
+    sortArray(sortType);
+  }, [sortType]);
 
   useEffect(() => {
     const fetchCharacters = async () => {
@@ -76,7 +77,7 @@ useEffect(() => {
     history.push("/");
   };
 
-//upvotes and downvotes
+  //upvotes and downvotes
   const handleUpvote = async (id) => {
     const updatedPost = await upvotePost(id);
     setPosts((prevState) =>
@@ -84,32 +85,31 @@ useEffect(() => {
         return post.id === Number(id) ? updatedPost : post;
       })
     );
-    setVoted(prevState=>[...prevState, id])
+    setVoted((prevState) => [...prevState, id]);
   };
 
   const handleDownvote = async (id, score) => {
     if (score < -10) {
-      await handleDelete(id)
+      await handleDelete(id);
       setPosts((prevState) =>
-      prevState.filter((post) => {
-        return post.id !== Number(id)
-      })
-    ); 
-    }
-    else {
+        prevState.filter((post) => {
+          return post.id !== Number(id);
+        })
+      );
+    } else {
       const updatedPost = await downvotePost(id);
       setPosts((prevState) =>
         prevState.map((post) => {
           return post.id === Number(id) ? updatedPost : post;
         })
       );
-      setVoted(prevState=>[...prevState, id])
+      setVoted((prevState) => [...prevState, id]);
     }
   };
 
   return (
     <Switch>
-      <Route path exact="/">
+      <Route exact path="/">
         <Posts
           posts={posts}
           currentUser={currentUser}

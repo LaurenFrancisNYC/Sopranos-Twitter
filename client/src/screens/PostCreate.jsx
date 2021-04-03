@@ -38,7 +38,7 @@ export default function PostCreate(props) {
       <select onChange={handleChange} defaultValue='default' name={"character_id"} >
           <option value='default' disabled>-- Select a character --</option>
         {characters.map(character => (
-          <option value={character.id}>{character.name}</option>
+          <option value={character.id} key={character.id}>{character.name}</option>
           ))}
       </select>
       
