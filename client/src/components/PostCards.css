@@ -102,3 +102,23 @@
   border-width: 1px;
   border-color: rgb(125, 125, 125);
 }
+
+.upvoted {
+  font-size: 20px;
+  color: rgb(0, 121, 81);
+  background-color: rgba(0, 0, 0, 0.0);
+  margin: 5px;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent; 
+}
+
+.downvoted {
+  font-size: 20px;
+  color: rgb(121, 0, 0);
+  background-color: rgba(0, 0, 0, 0.0);
+  margin: 5px;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent; 
+}

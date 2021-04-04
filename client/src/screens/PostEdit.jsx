@@ -1,48 +1,55 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import "./PostCreate.css";
 
 export default function PostEdit(props) {
   const [formData, setFormData] = useState({
-    content: ''
-  })
+    content: "",
+  });
   const { content } = formData;
   const { id } = useParams();
   const { posts, handleUpdate } = props;
 
   useEffect(() => {
     const prefillFormData = () => {
-      const postCard = posts.find(post => post.id === Number(id));
+      const postCard = posts.find((post) => post.id === Number(id));
       setFormData({
-        content: postCard.content
-      })
-    }
+        content: postCard.content,
+      });
+    };
     if (posts.length) {
-      prefillFormData()
+      prefillFormData();
     }
-  }, [posts, id])
+  }, [posts, id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
   return (
-    <form onSubmit={(e) => {
-      e.preventDefault();
-      handleUpdate(id, formData);
-    }}>
-      <label>
-        Edit Post:
-        <textarea
-          name='content'
-          value={content}
-          onChange={handleChange}
-        />
-      </label>
-      <button>Submit</button>
-    </form>
-  )
+    <div className="post-creation-container">
+      <form
+        className="post-creation"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleUpdate(id, formData);
+        }}
+      >
+        <label>
+          <textarea
+            maxlength="180"
+            className="text-field"
+            name="content"
+            value={content}
+            onChange={handleChange}
+          />
+        </label>
+        <button className="submit-button">Submit</button>
+      </form>
+    </div>
+  );
 }

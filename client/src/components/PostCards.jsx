@@ -32,7 +32,11 @@ export default function PostCards(props) {
           {currentUser !== null && (
             <>
               <button
-                className="post-upvote-button"
+                // className="post-upvote-button"
+                // className={`post-upvote-button ${voted.includes(post.id) ? "voted" : ""}`}
+                className={
+                  voted.includes(post.id) ? "upvoted" : "post-upvote-button"
+                }
                 disabled={voted.includes(post.id)}
                 onClick={() => handleUpvote(post.id)}
               >
@@ -45,7 +49,10 @@ export default function PostCards(props) {
           {currentUser !== null && (
             <>
               <button
-                className="post-downvote-button"
+                // className="post-downvote-button"
+                className={
+                  voted.includes(post.id) ? "downvoted" : "post-downvote-button"
+                }
                 disabled={voted.includes(post.id)}
                 onClick={() => handleDownvote(post.id, post.score)}
               >
@@ -69,7 +76,6 @@ export default function PostCards(props) {
                 <button
                   className="post-delete-button"
                   onClick={() => handleDelete(post.id)}
-                  
                 >
                   ❌
                 </button>
@@ -78,8 +84,7 @@ export default function PostCards(props) {
           </div>
         </div>
       ))}
-                <div className="bottom-border"/>
-
+      <div className="bottom-border" />
     </div>
   );
 }
