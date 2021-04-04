@@ -32,8 +32,10 @@ export default function Nav(props) {
               </>
             </>
           ) : (
-            <Link className="login" to="/login">
-              Login / Register
+              <Link className="nav-controls" to="/login">
+                <button className="nav-buttons">
+                  Login / Register
+                  </button>
             </Link>
           )}
         </div>

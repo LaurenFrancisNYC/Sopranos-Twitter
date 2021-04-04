@@ -49,7 +49,11 @@
   justify-content: center;
 }
 
-.user-controls{
+.user-controls {
+  position: absolute;
+  margin-left: 680px;
+  margin-bottom: 85px;
+  /* z-index: 0; */
 }
 
 .post-edit-button {
@@ -57,12 +61,11 @@
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
   text-shadow: 0px 0px 0px transparent;
-  background-color: rgba(0, 0, 0, 0.0);
-
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .post-delete-button {
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0);
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
   text-shadow: 0px 0px 0px transparent;
@@ -71,7 +74,7 @@
 .post-upvote-button {
   font-size: 20px;
   color: aquamarine;
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0);
   margin: 5px;
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
@@ -82,14 +85,14 @@
   font-size: 20px;
   color: rgb(255, 172, 172);
 
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0);
   margin: 5px;
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
   text-shadow: 0px 0px 0px transparent;
 }
 
-.selection{
+.selection {
   max-width: 700px;
   height: 19px;
   justify-content: space-between;
@@ -97,7 +100,7 @@
   margin-top: 10px;
 }
 
-.bottom-border{
+.bottom-border {
   border-top-style: solid;
   border-width: 1px;
   border-color: rgb(125, 125, 125);
@@ -106,19 +109,70 @@
 .upvoted {
   font-size: 20px;
   color: rgb(0, 121, 81);
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0);
   margin: 5px;
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
-  text-shadow: 0px 0px 0px transparent; 
+  text-shadow: 0px 0px 0px transparent;
 }
 
 .downvoted {
   font-size: 20px;
   color: rgb(121, 0, 0);
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0);
   margin: 5px;
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
-  text-shadow: 0px 0px 0px transparent; 
+  text-shadow: 0px 0px 0px transparent;
+}
+
+@media only screen and (max-width: 375px) {
+  .post {
+    min-width: 300px;
+    max-width: 360px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 5px
+  }
+  .user-controls {
+    position: absolute;
+    margin-left: 340px;
+  }
+  .selection {
+    max-width: 300px;
+    height: 19px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .post-upvote-button {
+    margin-bottom: 75px;
+    margin-right: -33px;
+  }
+
+  .post-downvote-button {
+    margin-top: 75px;
+    margin-right: -3px;
+
+  }
+
+  .post-score {
+    margin-right: -38px;
+
+  }
+  .character-image {
+  width: 60px;
+  min-width: 60px;
+  }
+
+  .post-content {
+    margin-right: 10px;
+    font-size: 12px;
+  }
+  
+  .post-credits {
+    font-size: 10px;
+  }
 }

@@ -41,7 +41,7 @@ export default function PostEdit(props) {
       >
         <label>
           <textarea
-            maxlength="180"
+            maxLength="180"
             className="text-field"
             name="content"
             value={content}

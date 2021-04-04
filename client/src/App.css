@@ -3,6 +3,9 @@
 .App {
   background-color: rgb(31, 31, 31);
   min-height: 1000px;
+  width: 100%;
+  overflow-x: hidden;
+
 }
 
 /* .App {

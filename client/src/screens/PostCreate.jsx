@@ -30,7 +30,7 @@ export default function PostCreate(props) {
           }}
         >
           <textarea
-            maxlength="180"
+            maxLength="180"
             placeholder="Max length - 180 characters."
             className="text-field"
             name="content"

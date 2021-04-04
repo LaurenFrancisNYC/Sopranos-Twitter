@@ -32,8 +32,6 @@ export default function PostCards(props) {
           {currentUser !== null && (
             <>
               <button
-                // className="post-upvote-button"
-                // className={`post-upvote-button ${voted.includes(post.id) ? "voted" : ""}`}
                 className={
                   voted.includes(post.id) ? "upvoted" : "post-upvote-button"
                 }
@@ -49,7 +47,6 @@ export default function PostCards(props) {
           {currentUser !== null && (
             <>
               <button
-                // className="post-downvote-button"
                 className={
                   voted.includes(post.id) ? "downvoted" : "post-downvote-button"
                 }

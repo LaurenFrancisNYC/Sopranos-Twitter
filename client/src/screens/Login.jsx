@@ -1,50 +1,53 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
-    name: '',
-    password: ''
-  })
+    name: "",
+    password: "",
+  });
   const { name, password } = formData;
   const { handleLogin } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
   return (
-    <form onSubmit={(e)=>{
-      e.preventDefault();
-      handleLogin(formData);
-    }}>
-      <h3>Login</h3>
+    <div className='signup-container'>
+    <form className='signup-form'
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleLogin(formData);
+      }}
+    >
       <label>
         Username:
-        <input
-          type='text'
-          name='name'
-          value={name}
-          onChange={handleChange}
-        />
+        <input type="text" name="name" value={name} onChange={handleChange} />
       </label>
       <br />
       <label>
         Password:
         <input
-          type='password'
-          name='password'
+          type="password"
+          name="password"
           value={password}
           onChange={handleChange}
         />
       </label>
-      <br />
-      <Link to='/register'>Register</Link>
-      <button>Submit</button>
-    </form>
-  )
+        <br />
+        <div>
+      <Link to="/register">
+        <button className="submit-button">Register</button>
+      </Link>
+          <button className="submit-button">Submit</button>
+          </div>
+      </form>
+      </div>
+  );
 }
