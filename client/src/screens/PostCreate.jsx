@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "./PostCreate.css";
+
 
 export default function PostCreate(props) {
   const { handleCreate, characters } = props;
@@ -19,19 +21,16 @@ export default function PostCreate(props) {
   };
 
   return (
-    <form
+    <div className='post-creation-container'>
+    <div >
+    <form className='post-creation'
       onSubmit={(e) => {
         e.preventDefault();
         handleCreate(formData, character_id);
       }}
     >
-      <h3>Create Post</h3>
-
-      <label>
-        Content:
-        <textarea name="content" value={content} onChange={handleChange} />
-      </label>
-
+        <textarea maxlength="180" placeholder="Max length - 180 characters." className="text-field" name="content" value={content} onChange={handleChange} />
+<div>
       <select
         onChange={handleChange}
         defaultValue="default"
@@ -47,7 +46,10 @@ export default function PostCreate(props) {
         ))}
       </select>
 
-      <button>Submit</button>
-    </form>
+            <button className='submit-button'>Submit</button>
+            </div>
+      </form>
+      </div>
+    </div>
   );
 }

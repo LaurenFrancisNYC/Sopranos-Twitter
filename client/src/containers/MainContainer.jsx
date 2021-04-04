@@ -86,6 +86,7 @@ export default function MainContainer(props) {
       })
     );
     setVoted((prevState) => [...prevState, id]);
+    
   };
 
   const handleDownvote = async (id, score) => {

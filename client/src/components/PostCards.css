@@ -1,16 +1,18 @@
 .post {
-  border-color: rgba(255, 255, 255, 0.386);
-  border-style: solid;
-  border-width: 2px;
-  background-color: rgba(172, 172, 172, 0.386);
-  /* border-radius: 10px;  */
+  border-color: rgb(125, 125, 125);
+  padding: 5px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-width: 1px;
+  background-color: rgb(31, 31, 31);
   min-width: 500px;
   max-width: 700px;
-  /* margin: 10px; */
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  /* flex-wrap: wrap; */
   flex-direction: row;
+  color: rgb(255, 255, 255);
 }
 
 .post-text {
@@ -27,17 +29,15 @@
   height: 100px;
   min-height: 100px;
   object-fit: cover;
-  /* border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px; */
 }
 
 .post-content {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .post-credits {
   margin-top: 0px;
-  /* position: absolute; */
+  font-size: 12px;
   font-style: italic;
 }
 
@@ -50,12 +50,9 @@
 }
 
 .user-controls{
-  /* position: absolute; */
-  /* margin-right: 30px;  */
 }
 
 .post-edit-button {
-  /* position: absolute; */
   margin-left: -29px;
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
@@ -65,10 +62,7 @@
 }
 
 .post-delete-button {
-  /* position: absolute; */
-  /* margin-bottom: 20px; */
   background-color: rgba(0, 0, 0, 0.0);
-  /* margin-left: 466px; */
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
   text-shadow: 0px 0px 0px transparent;
@@ -76,6 +70,7 @@
 
 .post-upvote-button {
   font-size: 20px;
+  color: aquamarine;
   background-color: rgba(0, 0, 0, 0.0);
   margin: 5px;
   box-shadow: 0px 0px 0px transparent;
@@ -85,9 +80,25 @@
 
 .post-downvote-button {
   font-size: 20px;
+  color: rgb(255, 172, 172);
+
   background-color: rgba(0, 0, 0, 0.0);
   margin: 5px;
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
   text-shadow: 0px 0px 0px transparent;
+}
+
+.selection{
+  max-width: 700px;
+  height: 19px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.bottom-border{
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: rgb(125, 125, 125);
 }

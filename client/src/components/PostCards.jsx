@@ -9,10 +9,18 @@ export default function PostCards(props) {
     handleUpvote,
     handleDownvote,
     voted,
+    setSortType,
   } = props;
 
   return (
     <div>
+      <div className="selection">
+        <select onChange={(e) => setSortType(e.target.value)}>
+          <option value="date">Date - newest</option>
+          <option value="score">Score - highest</option>
+        </select>
+      </div>
+
       {posts.map((post) => (
         <div className="post" key={post.id}>
           <img
@@ -52,23 +60,26 @@ export default function PostCards(props) {
               {post.character.name} aka {post.user.name}
             </div>
           </div>
-          <div className="user-controls">   
-          {currentUser?.id === post.user_id && (
-            <>
-              <Link to={`/posts/edit/${post.id}`}>
-                <button className="post-edit-button">🖊</button>
-              </Link>
-              <button
-                className="post-delete-button"
-                onClick={() => handleDelete(post.id)}
-              >
-                ❌
-              </button>
-            </>
+          <div className="user-controls">
+            {currentUser?.id === post.user_id && (
+              <>
+                <Link to={`/posts/edit/${post.id}`}>
+                  <button className="post-edit-button">🖊</button>
+                </Link>
+                <button
+                  className="post-delete-button"
+                  onClick={() => handleDelete(post.id)}
+                  
+                >
+                  ❌
+                </button>
+              </>
             )}
-            </div>
+          </div>
         </div>
       ))}
+                <div className="bottom-border"/>
+
     </div>
   );
 }

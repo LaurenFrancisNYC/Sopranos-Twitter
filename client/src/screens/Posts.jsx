@@ -1,7 +1,6 @@
 import PostCards from "../components/PostCards";
 import "./Posts.css";
 
-
 export default function Posts(props) {
   const {
     posts,
@@ -15,13 +14,6 @@ export default function Posts(props) {
 
   return (
     <div>
-      <h1>Posts</h1>
-      <>
-        <select onChange={(e) => setSortType(e.target.value)}>
-          <option value="date">Date - newest</option>
-          <option value="score">Score - highest</option>
-        </select>
-      </>
       <div className="posts-feed">
         <PostCards
           posts={posts}
@@ -30,6 +22,7 @@ export default function Posts(props) {
           handleUpvote={handleUpvote}
           handleDownvote={handleDownvote}
           voted={voted}
+          setSortType={setSortType}
         />
       </div>
     </div>
