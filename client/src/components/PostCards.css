@@ -175,4 +175,14 @@
   .post-credits {
     font-size: 10px;
   }
+
+  .upvoted {
+    margin-bottom: 75px;
+    margin-right: -33px;
+  }
+  
+  .downvoted {
+    margin-top: 75px;
+    margin-right: -3px;
+  }
 }
