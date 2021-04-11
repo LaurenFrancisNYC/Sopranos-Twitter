@@ -20,7 +20,9 @@
 
 ## Overview
 
-_**A Twitter Clone Where Everyone Can Only Post as Sopranos Characters (Working title) ** This app is clone of Twitter with a key difference - users can only post as the Sopranos character they choose upon sign up. Posts that are well liked will earn gabagool instead of hearts, and posts that are deemed not in character will be deleted after a thershold of 10 downvotes is met.
+A Twitter Clone Where Everyone Can Only Post as Sopranos Characters (Working title)
+
+This app is clone of Twitter with a key difference - users can only post as the Sopranos character they choose upon sign up. Posts that are well liked will earn gabagool instead of hearts, and posts that are deemed not in character will be deleted after a thershold of 10 downvotes is met.
 
 
 <br>
@@ -78,14 +80,14 @@ https://whimsical.com/twitter-but-everyone-posts-as-a-sopranos-character-KdXZWLf
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Backend setup (migrating tables and route/controller set up)   |    H     |     6 hrs      |     TBD     |    TBD    |
-| Backend setup (authorization)  |    H     |     6 hrs      |    TBD     |     TBD     |
-| Frontend setup (component creation)  |    H     |     4 hrs      |    TBD     |     TBD     |
-| Frontend setup (api calls)  |    H     |     4 hrs      |    TBD     |     TBD     |
-| Frontend  (general JS/HTML)  |    H     |     4 hrs      |    TBD     |     TBD     |
-| Frontend  (CSS)  |    H     |     4 hrs      |    TBD     |     TBD     |
-| Testing / QA  |    H     |     4 hrs      |    TBD     |     TBD     |
-| TOTAL               |          |     32 hrs      |     TBD     |     TBD     |
+| Backend setup (migrating tables and route/controller set up)   |    H     |     6 hrs      |     5 hrs     |    5 hrs    |
+| Backend setup (authorization)  |    H     |     6 hrs      |    3 hrs     |     3 hrs     |
+| Frontend setup (component creation)  |    H     |     4 hrs      |    5 hrs     |     5 hrs     |
+| Frontend setup (api calls)  |    H     |     4 hrs      |    2 hrs     |     2 hrs     |
+| Frontend  (general JS/HTML)  |    H     |     4 hrs      |    5 hrs     |     5 hrs     |
+| Frontend  (CSS)  |    H     |     4 hrs      |    4 hrs     |     4 hrs     |
+| Testing / QA  |    H     |     4 hrs      |    2 hrs     |     2 hrs     |
+| TOTAL               |          |     32 hrs      |     26 hrs     |     26 hrs     |
 
 
 <br>
@@ -101,15 +103,4 @@ https://whimsical.com/twitter-but-everyone-posts-as-a-sopranos-character-KdXZWLf
 ***
 ## Post-MVP
 
-- The ability to see a user's profile; this will contain their total gagabool count and their posts. 
 - The ability to sort the main feed by the most liked posts. 
-
-***
-
-## Code Showcase
-
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
-
-## Code Issues & Resolutions
-
-> Use this section to list of all major issues encountered and their resolution.
