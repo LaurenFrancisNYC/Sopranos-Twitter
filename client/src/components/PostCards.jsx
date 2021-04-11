@@ -28,7 +28,7 @@ export default function PostCards(props) {
             alt="character"
             className="character-image"
           />
-
+            <div className='voting-buttons'>
           {currentUser !== null && (
             <>
               <button
@@ -42,10 +42,10 @@ export default function PostCards(props) {
               </button>
             </>
           )}
-          <div className="post-score">{post.score}</div>
 
           {currentUser !== null && (
             <>
+              <div className="post-score">{post.score}</div>
               <button
                 className={
                   voted.includes(post.id) ? "downvoted" : "post-downvote-button"
@@ -57,14 +57,13 @@ export default function PostCards(props) {
               </button>
             </>
           )}
-
+          </div>
           <div className="post-text">
             <div className="post-content">{post.content}</div>
             <div className="post-credits">
               {post.character.name} aka {post.user.name}
             </div>
-          </div>
-          <div className="user-controls">
+            <div className="user-controls">
             {currentUser?.id === post.user_id && (
               <>
                 <Link to={`/posts/edit/${post.id}`}>
@@ -78,6 +77,7 @@ export default function PostCards(props) {
                 </button>
               </>
             )}
+          </div>
           </div>
         </div>
       ))}

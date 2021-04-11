@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-
 export default function Login(props) {
   const [formData, setFormData] = useState({
     name: "",
@@ -19,35 +18,36 @@ export default function Login(props) {
   };
 
   return (
-    <div className='signup-container'>
-    <form className='signup-form'
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleLogin(formData);
-      }}
-    >
-      <label>
-        Username:
-        <input type="text" name="name" value={name} onChange={handleChange} />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-        />
-      </label>
+    <div className="signup-container">
+      <form
+        className="signup-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleLogin(formData);
+        }}
+      >
+        <label>
+          Username:
+          <input type="text" name="name" value={name} onChange={handleChange} />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </label>
         <br />
         <div>
-      <Link to="/register">
-        <button className="submit-button">Register</button>
-      </Link>
+          <Link to="/register">
+            <button className="submit-button">Register</button>
+          </Link>
           <button className="submit-button">Submit</button>
-          </div>
+        </div>
       </form>
-      </div>
+    </div>
   );
 }
